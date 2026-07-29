@@ -304,12 +304,11 @@
 </div>
 
 <script>
-// ==== Form settings ====
-// The message is sent to a Cloudflare Pages Function, which holds the
-// Telegram bot token as a server-side environment variable — the token
-// never appears in this file or in the browser. See
-// functions/send-telegram.js for setup instructions.
-const SEND_ENDPOINT = '/send-telegram';
+// ==== Contact form → Telegram ====
+// The form posts to a small Cloudflare Worker (see telegram-worker/) which
+// forwards the message to Telegram. To point the form at a different
+// person/business — just change TELEGRAM_ENDPOINT below.
+const TELEGRAM_ENDPOINT = 'https://portfolio-contact-form.YOUR-SUBDOMAIN.workers.dev';
 
 function openContactModal() {
   document.getElementById('contactModal').classList.add('open');
@@ -366,19 +365,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
   const message = messageEl.value.trim();
 
   try {
-    const res = await fetch(SEND_ENDPOINT, {
+    const res = await fetch(TELEGRAM_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, phone: phone, message: message })
     });
-    const data = await res.json();
-    if (data.ok) {
+    if (res.ok) {
       statusEl.textContent = 'Thank you! Your message has been sent — I\'ll be in touch soon.';
       statusEl.classList.add('success');
       document.getElementById('contactForm').reset();
       setTimeout(closeContactModal, 1800);
     } else {
-      throw new Error(data.description || 'Server error');
+      throw new Error('Request failed with status ' + res.status);
     }
   } catch (err) {
     statusEl.textContent = 'Something went wrong. Please try again or message me directly on Telegram.';

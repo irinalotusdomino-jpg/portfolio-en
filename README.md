@@ -1,94 +1,70 @@
-# Портфоліо
+# Portfolio
 
-Простий статичний сайт-портфоліо (HTML/CSS, без збірки) для розміщення на GitHub Pages.
+A simple static portfolio site (HTML/CSS, no build step) for GitHub Pages, Netlify, or any static host.
 
-## Структура
+## Structure
 
 ```
-index.html                          — головна сторінка з переліком проєктів
-style.css                           — стилі
-apps-script.gs                      — код для Google Apps Script (форма → Google Таблиця + Telegram)
-cases/ai-reels-creator.html         — кейс: AI Reels Creator
-cases/dr-macaron.html               — кейс: Dr. Macaron
-cases/englishgo.html                — кейс: EnglishGo
-cases/flight-dream.html             — кейс: Flight Dream
-cases/sensoryiq.html                — кейс: sensoryIQ (дитячий центр розвитку)
-cases/cleaning-service.html         — кейс: клінінгова служба
-cases/pip-orchard.html              — кейс: Pip's Orchard (дитячий сайт)
-assets/screenshots/                 — скріншоти проєктів
+index.html                          — homepage with the project list
+style.css                           — styles
+telegram-worker/worker.js           — Cloudflare Worker: receives the contact form and forwards it to Telegram
+telegram-worker/README.md           — setup instructions for the Worker
+cases/ai-reels-creator.html         — case study: AI Reels Creator
+cases/dr-macaron.html               — case study: Dr. Macaron
+cases/englishgo.html                — case study: EnglishGo
+cases/flight-dream.html             — case study: Flight Dream
+cases/sensoryiq.html                — case study: sensoryIQ (children's development center)
+cases/cleaning-service.html         — case study: cleaning service
+cases/pip-orchard.html              — case study: Pip's Orchard (kids' site)
+cases/sushi-delivery.html           — case study: sushi delivery
+assets/screenshots/                 — project screenshots
 ```
 
-## Як опублікувати на GitHub Pages
+## Publishing to GitHub Pages
 
-Архів `portfolio-git-ready.zip` вже містить готовий git-репозиторій (гілка `main`, перший коміт зроблено) — залишилось тільки прив'язати його до GitHub і запушити.
-
-1. Розпакуйте архів і відкрийте термінал у цій папці.
-2. Створіть новий **порожній** репозиторій на GitHub (без README, без .gitignore — щоб не було конфліктів), наприклад `portfolio`.
-3. Виконайте в терміналі (замініть `ваш-нік` на свій GitHub-нікнейм):
+1. Create a new **empty** repository on GitHub (no README, no .gitignore, to avoid conflicts), e.g. `portfolio`.
+2. From this folder:
    ```
-   git remote add origin https://github.com/ваш-нік/portfolio.git
+   git init
+   git add -A
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/your-username/portfolio.git
    git push -u origin main
    ```
-4. У репозиторії на GitHub відкрийте **Settings → Pages**.
-5. У розділі **Source** оберіть branch `main` і папку `/ (root)`, натисніть **Save**.
-6. Через 1-2 хвилини сайт буде доступний за адресою:
-   `https://ваш-нік.github.io/portfolio/`
+3. In the GitHub repository, open **Settings → Pages**.
+4. Under **Source**, choose branch `main` and folder `/ (root)`, then **Save**.
+5. In a minute or two, the site will be live at:
+   `https://your-username.github.io/portfolio/`
 
-**Якщо немає git на комп'ютері** — простіше через веб-інтерфейс: у порожньому репозиторії GitHub натисніть "uploading an existing file" і перетягніть усі файли з розпакованої папки (окрім `.git`), потім повторіть кроки 4-6.
+**No git on your machine?** Use the web interface instead: in the empty GitHub repository, click "uploading an existing file" and drag in all the files from this folder (except `.git`), then repeat steps 3-5.
 
-## Форма «Обговорити проєкт» / «Написати»
+## "Discuss a project" / "Send" contact form
 
-На головній сторінці кнопки «Обговорити проєкт» (хіро-блок) і «Написати» (футер) відкривають форму
-з полями Ім'я, Телефон (з перевіркою формату) і коментар. Заявка записується у вашу Google Таблицю
-і одночасно дублюється в Telegram — усе це обробляє окремий файл `apps-script.gs`.
+On the homepage, the "Discuss a project" button (hero section) and "Get in touch" (footer) open a
+form with Name, Phone (format-checked), and a message field. The form posts to a small Cloudflare
+Worker, which forwards the inquiry to Telegram — see `telegram-worker/README.md` for the full setup.
 
-**Чому не напряму з сайту:** токен Telegram-бота небезпечно тримати у відкритому коді сайту (його
-побачить будь-хто). Тому весь чутливий код виконується на боці Google (Apps Script), а сайт лише
-надсилає туди запит.
+**Why not send straight from the site:** the Telegram bot token can't safely live in the site's
+own code (anyone could view it in the page source). So the token lives only in Cloudflare's
+environment variables, and the static site just calls a small serverless function that holds it.
 
-**Щоб форма запрацювала, потрібно (займе ~5 хвилин):**
+**To get the form working, follow `telegram-worker/README.md`** — it walks through creating a
+bot with @BotFather, deploying the Worker on Cloudflare (free), and adding the `TELEGRAM_ENDPOINT`
+URL to `index.html`.
 
-1. Відкрийте вашу Google Таблицю → меню **Розширення → Apps Script**.
-2. Видаліть вміст файлу `Code.gs`, який відкриється, і вставте туди весь вміст файлу `apps-script.gs` з цього архіву.
-3. У Telegram напишіть [@BotFather](https://t.me/BotFather) → `/newbot` → отримайте `BOT_TOKEN`.
-   Напишіть своєму боту будь-яке повідомлення, потім відкрийте
-   `https://api.telegram.org/bot<ВАШ_ТОКЕН>/getUpdates` і знайдіть `"chat":{"id": ...}` — це `CHAT_ID`.
-4. У вставленому коді Apps Script заповніть на початку файлу:
-   ```js
-   const TELEGRAM_BOT_TOKEN = 'ВСТАВТЕ_СЮДИ_ТОКЕН_БОТА';
-   const TELEGRAM_CHAT_ID = 'ВСТАВТЕ_СЮДИ_CHAT_ID';
-   ```
-5. Збережіть (Ctrl+S) → **Deploy → New deployment → Web app**:
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-   → Deploy → підтвердьте дозволи Google.
-6. Скопіюйте URL веб-застосунку (закінчується на `/exec`).
-7. У файлі `index.html` знайдіть на початку блоку `<script>` внизу сторінки:
-   ```js
-   const APPS_SCRIPT_URL = 'ВСТАВТЕ_СЮДИ_URL_WEB_APP';
-   ```
-   і вставте скопійований URL.
-8. Закомітьте зміну і запуште (`git add -A && git commit -m "Налаштовано форму" && git push`).
+## Before publishing
 
-Заявки автоматично потраплятимуть на аркуш **"Заявки"** у вашій таблиці (стовпці: Дата, Ім'я, Телефон,
-Текст, Джерело — з позначкою "Заявка з портфоліо"), а також дублюватимуться в Telegram.
+- [ ] Set up the contact form per `telegram-worker/README.md` and update `TELEGRAM_ENDPOINT` in `index.html`.
+- [ ] Optionally add more projects to the `.projects` section in `index.html` (copy a `.project-card` block).
 
-Якщо пізніше зміните код у `apps-script.gs` — потрібно зробити **New deployment** ще раз
-(просте збереження файлу не оновлює вже опубліковану версію).
+## Current projects in the portfolio
 
-Поки `APPS_SCRIPT_URL` не вставлено, форма показує повідомлення «Форму не налаштовано» замість помилки.
-
-## Що потрібно доробити перед публікацією
-
-- [ ] Виконати налаштування форми з розділу вище (Apps Script + Telegram + `APPS_SCRIPT_URL`).
-- [ ] За бажанням — додати більше проєктів у секцію `.projects` в `index.html` (копіюйте блок `.project-card`).
-
-## Поточні проєкти в портфоліо
-
-1. AI Reels Creator — лендінг AI-контент студії
-2. Dr. Macaron — сайт кондитерської
-3. EnglishGo — курс англійської
-4. Pip's Orchard — інтерактивний сайт для вивчення англійської дітьми
-5. Flight Dream — польоти на повітряній кулі
-6. sensoryIQ — дитячий центр розвитку
-7. Клінінгова служба — прибирання квартир та офісів
+1. AI Reels Creator — landing page for an AI content studio
+2. Dr. Macaron — patisserie website
+3. EnglishGo — English course
+4. Pip's Orchard — interactive site for teaching English to children
+5. Flight Dream — hot-air balloon flights
+6. sensoryIQ — children's development center
+7. Cleaning Service — apartment and office cleaning
+8. Sushi Delivery — Japanese food delivery
