@@ -304,12 +304,12 @@
 </div>
 
 <script>
-// ==== Form settings (Google Sheets + Telegram via Apps Script) ====
-// The bot token and chat_id are configured in a separate apps-script.gs file
-// (on the Google side, not visible in the site code). Only the URL of the
-// already-deployed Apps Script web app needs to be inserted here — see
-// apps-script.gs for instructions.
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjKyHhJPvxg4FefCk3Q43lx-s5O0-JwYvJcK7pn62G4wfv7XM7-4lDS8WZHma_kgle3Q/exec';
+// ==== Form settings ====
+// The message is sent to a Cloudflare Pages Function, which holds the
+// Telegram bot token as a server-side environment variable — the token
+// never appears in this file or in the browser. See
+// functions/send-telegram.js for setup instructions.
+const SEND_ENDPOINT = '/send-telegram';
 
 function openContactModal() {
   document.getElementById('contactModal').classList.add('open');
@@ -358,31 +358,27 @@ document.getElementById('contactForm').addEventListener('submit', async function
   }
   if (!valid) return;
 
-  if (APPS_SCRIPT_URL.indexOf('INSERT') !== -1) {
-    statusEl.textContent = 'Form is not configured yet: add APPS_SCRIPT_URL in the site code (see apps-script.gs).';
-    statusEl.classList.add('error');
-    return;
-  }
-
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending…';
 
-  const formData = new URLSearchParams();
-  formData.append('name', nameEl.value.trim());
-  formData.append('phone', phoneEl.value.trim());
-  formData.append('message', messageEl.value.trim());
-  formData.append('source', 'Portfolio inquiry');
+  const name = nameEl.value.trim();
+  const phone = phoneEl.value.trim();
+  const message = messageEl.value.trim();
 
   try {
-    const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', body: formData });
+    const res = await fetch(SEND_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, phone: phone, message: message })
+    });
     const data = await res.json();
-    if (data.status === 'ok') {
+    if (data.ok) {
       statusEl.textContent = 'Thank you! Your message has been sent — I\'ll be in touch soon.';
       statusEl.classList.add('success');
       document.getElementById('contactForm').reset();
       setTimeout(closeContactModal, 1800);
     } else {
-      throw new Error(data.message || 'Apps Script error');
+      throw new Error(data.description || 'Server error');
     }
   } catch (err) {
     statusEl.textContent = 'Something went wrong. Please try again or message me directly on Telegram.';
