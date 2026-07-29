@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: AI Reels Creator — Portfolio</title>
+<meta name="description" content="Case study: a landing page for the AI Reels Creator studio, built on Tilda.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap case-hero">
+  <a class="case-back" href="../index.html#projects">← All projects</a>
+  <span class="eyebrow">Landing page · AI content studio</span>
+  <h1>AI Reels Creator</h1>
+  <p style="color:var(--text-muted); max-width:600px; font-size:16px;">
+    Promotional site for a studio that produces AI-generated reels, ad footage, and visuals for brands on social media.
+  </p>
+
+  <div class="case-cover">
+    <img src="../assets/screenshots/ai-reels-creator-hero.jpg" alt="Homepage of the AI Reels Creator website">
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <span class="eyebrow">Challenge</span>
+      Showcase the "AI content" niche through a striking, atmospheric hero screen that instantly conveys the studio's style.
+    </div>
+    <div>
+      <span class="eyebrow">Tools</span>
+      Tilda, Zero Block
+    </div>
+    <div>
+      <span class="eyebrow">Role</span>
+      Design and build
+    </div>
+  </div>
+
+  <div class="case-body">
+    <h2>Solution</h2>
+    <p>
+      A dark theme with a starry sky and a golden-orange accent highlights the "magic" of AI generation —
+      content that didn't exist before it was created. A large serif headline with an accented italic phrase
+      sets the emotional tone right on the hero screen, and two primary buttons guide the visitor either to
+      watch finished reels on Instagram or to browse examples of websites.
+    </p>
+    <h2>Result</h2>
+    <p>
+      A finished single-page site, deployed and available online, with clear navigation to the studio's
+      social channels and portfolio examples.
+    </p>
+    <div class="btn-row" style="margin-top:24px;">
+      <a class="btn btn-primary" href="https://gregarious-figolla-b97cef.netlify.app/" target="_blank" rel="noopener">View live site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

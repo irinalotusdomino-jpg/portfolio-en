@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Flight Dream — Portfolio</title>
+<meta name="description" content="Case study: a website for the Flight Dream hot-air balloon service, built on Tilda.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap case-hero">
+  <a class="case-back" href="../index.html#projects">← All projects</a>
+  <span class="eyebrow">Tilda · Travel service</span>
+  <h1>Flight Dream</h1>
+  <p style="color:var(--text-muted); max-width:600px; font-size:16px;">
+    Website for a company organizing hot-air balloon flights in Kyiv.
+  </p>
+
+  <div class="case-cover">
+    <img src="../assets/screenshots/flight-dream-hero.jpg" alt="Homepage of the Flight Dream website">
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <span class="eyebrow">Challenge</span>
+      Convey a festive feeling and elevate the value of an unusual gift right on the hero screen, leading straight to choosing a flight.
+    </div>
+    <div>
+      <span class="eyebrow">Tools</span>
+      Tilda, Zero Block
+    </div>
+    <div>
+      <span class="eyebrow">Role</span>
+      Design and build
+    </div>
+  </div>
+
+  <div class="case-body">
+    <h2>Solution</h2>
+    <p>
+      A dawn sky with a teapot, a little house, and birds "flying" alongside the balloon creates a
+      fairy-tale, dreamlike mood — one that sells the emotion of flight rather than just a transport
+      service. A single clear CTA, "Choose your flight," takes visitors straight to picking an option,
+      with no extra steps in the way.
+    </p>
+    <h2>Result</h2>
+    <p>
+      A single-page site with a vivid, emotional hero screen, ready to receive booking requests.
+    </p>
+    <div class="btn-row" style="margin-top:24px;">
+      <a class="btn btn-primary" href="https://bravely-tall-yoga.tilda.ws/" target="_blank" rel="noopener">View live site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

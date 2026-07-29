@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Pip's Orchard — Portfolio</title>
+<meta name="description" content="Case study: an interactive website for teaching English to children.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap case-hero">
+  <a class="case-back" href="../index.html#projects">← All projects</a>
+  <span class="eyebrow">Interactive site · Kids · English</span>
+  <h1>Pip's Orchard</h1>
+  <p style="color:var(--text-muted); max-width:600px; font-size:16px;">
+    A playful site for teaching English to the youngest users — letters, counting, and daily
+    activities framed as a cozy fruit orchard.
+  </p>
+
+  <div class="case-cover">
+    <img src="../assets/screenshots/pip-orchard-hero.jpg" alt="Homepage of the Pip's Orchard website">
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <span class="eyebrow">Challenge</span>
+      Make learning English fun and easy for children to navigate without adult help — large buttons, a friendly mascot, simple navigation.
+    </div>
+    <div>
+      <span class="eyebrow">Tools</span>
+      HTML/CSS/JS, GitHub Pages
+    </div>
+    <div>
+      <span class="eyebrow">Role</span>
+      Design and build
+    </div>
+  </div>
+
+  <div class="case-body">
+    <h2>Solution</h2>
+    <p>
+      The main character — Pip, a little apple wearing a crown — creates instant emotional connection
+      and guides the child with chat-bubble lines ("Hi! I'm Pip. Let's play today!"). A warm,
+      illustrative palette (sky, sun, an apple tree full of fruit) and a large rounded "Start
+      exploring" CTA are sized for children's motor skills and attention span, while a "For little
+      learners" badge tells parents right away who the site is for.
+    </p>
+    <h2>Result</h2>
+    <p>
+      A finished interactive site with playful mechanics for learning letters, counting, and a daily
+      checklist, all woven into a single orchard-themed story.
+    </p>
+    <div class="btn-row" style="margin-top:24px;">
+      <a class="btn btn-primary" href="https://irinalotusdomino-jpg.github.io/kids/" target="_blank" rel="noopener">View live site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

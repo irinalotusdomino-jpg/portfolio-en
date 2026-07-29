@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Dr. Macaron — Portfolio</title>
+<meta name="description" content="Case study: a landing page for the Dr. Macaron patisserie, built on Tilda.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap case-hero">
+  <a class="case-back" href="../index.html#projects">← All projects</a>
+  <span class="eyebrow">Tilda · Patisserie</span>
+  <h1>Dr. Macaron</h1>
+  <p style="color:var(--text-muted); max-width:600px; font-size:16px;">
+    Brand website for a patisserie selling handmade macarons with signature fillings.
+  </p>
+
+  <div class="case-cover">
+    <img src="../assets/screenshots/dr-macaron-hero.jpg" alt="Homepage of the Dr. Macaron website">
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <span class="eyebrow">Challenge</span>
+      Convey a homemade, dessert-shop feel and quickly guide visitors to order via Instagram.
+    </div>
+    <div>
+      <span class="eyebrow">Tools</span>
+      Tilda, Zero Block
+    </div>
+    <div>
+      <span class="eyebrow">Role</span>
+      Design and build
+    </div>
+  </div>
+
+  <div class="case-body">
+    <h2>Solution</h2>
+    <p>
+      A warm cream-and-powder palette with a burgundy accent and a handwritten-style logo reads instantly
+      as a patisserie rather than a generic brand. A large serif headline and a close-up macaron photo on
+      the hero screen work like a shop window: the product and the mood are visible before visitors even
+      scroll. A "flavor of the day" badge adds a sense of a living, constantly refreshed menu.
+    </p>
+    <h2>Result</h2>
+    <p>
+      A single-page site with a clear call to action — orders flow directly to Instagram, where the
+      owner already has an established rapport with customers.
+    </p>
+    <div class="btn-row" style="margin-top:24px;">
+      <!-- <a class="btn btn-primary" href="https://zesty-manatee-9ac71f.netlify.app/" target="_blank" rel="noopener">View live site ↗</a> -->
+      <a class="btn btn-primary" href="https://macaronvarshavskiy.tilda.ws" target="_blank" rel="noopener">View live site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Sushi Delivery — Portfolio</title>
+<meta name="description" content="Case study: a website for Japanese food delivery, built on Tilda.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap case-hero">
+  <a class="case-back" href="../index.html#projects">← All projects</a>
+  <span class="eyebrow">Tilda · Food delivery</span>
+  <h1>Sushi Delivery</h1>
+  <p style="color:var(--text-muted); max-width:600px; font-size:16px;">
+    Website for Japanese food delivery across Kyiv, built around a promise of fast delivery.
+  </p>
+
+  <div class="case-cover">
+    <img src="../assets/screenshots/sushi-hero.jpg" alt="Homepage of the sushi delivery website">
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <span class="eyebrow">Challenge</span>
+      Communicate the key benefit — delivery within 60 minutes — and lead visitors straight to the product catalog.
+    </div>
+    <div>
+      <span class="eyebrow">Tools</span>
+      Tilda, Zero Block
+    </div>
+    <div>
+      <span class="eyebrow">Role</span>
+      Design and build
+    </div>
+  </div>
+
+  <div class="case-body">
+    <h2>Solution</h2>
+    <p>
+      A dark background with close-up photos of rolls and soy sauce appeals directly to appetite,
+      while a countdown timer for a free-delivery promotion adds a sense of a limited-time offer.
+      One bold orange "Catalog" CTA is the single focal action on the screen, with no distractions.
+    </p>
+    <h2>Result</h2>
+    <p>
+      A single-page showcase site that communicates the offer quickly and leads straight to the
+      product catalog.
+    </p>
+    <div class="btn-row" style="margin-top:24px;">
+      <a class="btn btn-primary" href="https://bravely-tall-yoga.tilda.ws/sushi" target="_blank" rel="noopener">View live site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

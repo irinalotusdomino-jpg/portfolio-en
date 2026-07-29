@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Web Design &amp; Websites on Tilda</title>
+<meta name="description" content="Web design portfolio: landing pages and business websites built on Tilda.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <span class="eyebrow">Web design · Tilda · GitHub + Netlify · <span class="nowrap">AI content</span></span>
+  <h1>Websites that <em>speak</em><br>your brand's language</h1>
+  <p class="lead">I build landing pages and websites on Tilda, as well as hand-coded sites deployed via GitHub and Netlify — from concept to launch. I also produce AI-generated ads and social media videos. Below is a map of the projects I've worked on.</p>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="#projects">View projects</a>
+    <button type="button" class="btn btn-ghost" onclick="openContactModal()">Discuss a project</button>
+  </div>
+</section>
+
+<section class="wrap section about-section" id="about">
+  <div class="about-grid">
+    <div class="about-avatar">IK</div>
+    <div>
+      <span class="eyebrow">About</span>
+      <h2 class="about-name">Iryna Kyrylova</h2>
+      <p class="about-text">
+        I build websites on Tilda for small businesses and personal projects, as well as single-page
+        sites in clean code deployed via GitHub and Netlify — depending on the scope and budget.
+        I believe great design should speak the language of a specific brand rather than a template:
+        for every project I choose a distinct palette, typography, and mood, as you can see in the
+        case studies below.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="projects">
+  <div class="section-head">
+    <span class="eyebrow">Projects</span>
+    <h2>Selected work</h2>
+  </div>
+
+  <div class="projects">
+
+    <!-- Project 1: AI Reels Creator -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/ai-reels-creator-hero.jpg" alt="Homepage of the AI Reels Creator website">
+        </div>
+        <div>
+          <h3 class="project-title">AI Reels Creator</h3>
+          <div class="tags">
+            <span class="tag">Landing page</span>
+            <span class="tag">AI content studio</span>
+          </div>
+          <p class="project-desc">
+            Promotional site for a studio that creates AI-generated reels, ad footage, and visuals.
+            A dark, atmospheric theme with a starry motif and a clear call to view work on Instagram.
+          </p>
+          <div class="project-links">
+            <a href="cases/ai-reels-creator.html">Case study →</a>
+            <a href="https://gregarious-figolla-b97cef.netlify.app/" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: Dr. Macaron -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/dr-macaron-hero.jpg" alt="Homepage of the Dr. Macaron website">
+        </div>
+        <div>
+          <h3 class="project-title">Dr. Macaron</h3>
+          <div class="tags">
+            <span class="tag">Tilda</span>
+            <span class="tag">Patisserie</span>
+          </div>
+          <p class="project-desc">
+            A brand website for a patisserie selling handmade macarons.
+            A warm cream-and-powder palette with close-up dessert photography creates
+            a mouth-watering, cozy feel.
+          </p>
+          <div class="project-links">
+            <a href="cases/dr-macaron.html">Case study →</a>
+            <!-- <a href="https://zesty-manatee-9ac71f.netlify.app/" target="_blank" rel="noopener">Live site ↗</a> -->
+            <a href="https://macaronvarshavskiy.tilda.ws" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: EnglishGo -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/englishgo-hero.jpg" alt="Homepage of the EnglishGo website">
+        </div>
+        <div>
+          <h3 class="project-title">EnglishGo</h3>
+          <div class="tags">
+            <span class="tag">Landing page</span>
+            <span class="tag">Online course</span>
+          </div>
+          <p class="project-desc">
+            Website for a spoken-English course. A purple-neon gradient with a background of
+            scattered letters conveys the energy of learning, while two CTAs guide visitors
+            toward different paths: starting the course or booking a trial lesson.
+          </p>
+          <div class="project-links">
+            <a href="cases/englishgo.html">Case study →</a>
+            <a href="https://irinalotusdomino-jpg.github.io/englishcourse/index.html" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: Pip's Orchard (kids site) -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/pip-orchard-hero.jpg" alt="Homepage of the Pip's Orchard website">
+        </div>
+        <div>
+          <h3 class="project-title">Pip's Orchard</h3>
+          <div class="tags">
+            <span class="tag">Interactive site</span>
+            <span class="tag">Kids · English</span>
+          </div>
+          <p class="project-desc">
+            A playful site for teaching English to young children: letters, counting, and a daily
+            checklist framed as a cozy fruit orchard. A friendly mascot, Pip, warm colors, and
+            large buttons make the experience intuitive even for the youngest users.
+          </p>
+          <div class="project-links">
+            <a href="cases/pip-orchard.html">Case study →</a>
+            <a href="https://irinalotusdomino-jpg.github.io/kids/" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5: SensoryIQ -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/sensoryiq-hero.jpg" alt="Homepage of the sensoryIQ children's development center website">
+        </div>
+        <div>
+          <h3 class="project-title">sensoryIQ Children's Development Center</h3>
+          <div class="tags">
+            <span class="tag">Landing page</span>
+            <span class="tag">Children's development center</span>
+          </div>
+          <p class="project-desc">
+            Website for the sensoryIQ children's development center in Kyiv. A soft pastel palette,
+            sections covering programs (sensory integration, speech therapy, support for children
+            with ASD and ADHD), class videos, and a booking form build parents' trust from the
+            very first screen.
+          </p>
+          <div class="project-links">
+            <a href="cases/sensoryiq.html">Case study →</a>
+            <a href="https://sensoryiq.netlify.app/" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 6: Flight Dream -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/flight-dream-hero.jpg" alt="Homepage of the Flight Dream website">
+        </div>
+        <div>
+          <h3 class="project-title">Flight Dream</h3>
+          <div class="tags">
+            <span class="tag">Tilda</span>
+            <span class="tag">Travel service</span>
+          </div>
+          <p class="project-desc">
+            Website for a hot-air balloon flight company in Kyiv. A sky-themed illustration with a
+            balloon, a teapot, and a house-shaped basket immediately conveys a festive, dream-like
+            mood.
+          </p>
+          <div class="project-links">
+            <a href="cases/flight-dream.html">Case study →</a>
+            <a href="https://bravely-tall-yoga.tilda.ws/" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 7: Cleaning service -->
+    <div class="project-card">
+      <div class="project-inner">
+        <div class="project-thumb">
+          <img src="assets/screenshots/cleaning-hero.jpg" alt="Homepage of the cleaning company website">
+        </div>
+        <div>
+          <h3 class="project-title">Cleaning Service</h3>
+          <div class="tags">
+            <span class="tag">Tilda</span>
+            <span class="tag">Home services</span>
+          </div>
+          <p class="project-desc">
+            Website for a cleaning company serving apartments and offices in Kyiv. A calm
+            blue-teal palette and photos of an inviting interior build trust before the first call.
+          </p>
+          <div class="project-links">
+            <a href="cases/cleaning-service.html">Case study →</a>
+            <a href="https://bravely-tall-yoga.tilda.ws/clining" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="wrap section" id="services">
+  <div class="section-head">
+    <span class="eyebrow">Services</span>
+    <h2>How I can help</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service">
+      <h3>Landing pages on Tilda</h3>
+      <p>Single-page sites built around a specific goal: a product, a service, or an event.</p>
+    </div>
+    <div class="service">
+      <h3>Multi-page websites</h3>
+      <p>Business websites and catalogs with multiple sections and contact forms.</p>
+    </div>
+    <div class="service">
+      <h3>Refresh &amp; support</h3>
+      <p>Improvements to existing Tilda sites: design, speed, and mobile optimization.</p>
+    </div>
+    <div class="service">
+      <h3>Hand-coded websites</h3>
+      <p>HTML/CSS sites without a website builder, deployed via GitHub Pages or Netlify.</p>
+    </div>
+    <div class="service">
+      <h3>AI content &amp; advertising</h3>
+      <p>
+        I produce AI-generated ad videos, reels, and visuals for businesses — no filming or studio required.
+        <a href="https://www.instagram.com/new_ai_life?igsh=emFlcHRubjFsZ25m" target="_blank" rel="noopener" style="color:var(--accent-gold); text-decoration:none; border-bottom:1px solid var(--accent-gold);">Examples on Instagram ↗</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap" id="contact">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+    <button type="button" class="btn btn-primary" style="padding:9px 18px; font-size:13px;" onclick="openContactModal()">Get in touch</button>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<!-- Contact modal -->
+<div class="modal-overlay" id="contactModal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal-close" onclick="closeContactModal()" aria-label="Close">&times;</button>
+    <h3 id="modalTitle" class="modal-title">Discuss a project</h3>
+    <p class="modal-sub">Leave your contact details — I'll get back to you shortly.</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" name="name" required autocomplete="name">
+        <span class="field-error" id="err-name"></span>
+      </div>
+      <div class="form-group">
+        <label for="cf-phone">Phone</label>
+        <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="+380 XX XXX XX XX">
+        <span class="field-error" id="err-phone"></span>
+      </div>
+      <div class="form-group">
+        <label for="cf-message">About the project</label>
+        <textarea id="cf-message" name="message" rows="4" placeholder="Briefly describe what you need"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" id="cf-submit" style="width:100%; justify-content:center;">Send</button>
+      <p class="form-status" id="cf-status" role="status"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+// ==== Form settings (Google Sheets + Telegram via Apps Script) ====
+// The bot token and chat_id are configured in a separate apps-script.gs file
+// (on the Google side, not visible in the site code). Only the URL of the
+// already-deployed Apps Script web app needs to be inserted here — see
+// apps-script.gs for instructions.
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjKyHhJPvxg4FefCk3Q43lx-s5O0-JwYvJcK7pn62G4wfv7XM7-4lDS8WZHma_kgle3Q/exec';
+
+function openContactModal() {
+  document.getElementById('contactModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeContactModal() {
+  document.getElementById('contactModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('contactModal').addEventListener('click', function(e) {
+  if (e.target === this) closeContactModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeContactModal();
+});
+
+function isValidPhone(value) {
+  const cleaned = value.replace(/[\s\-\(\)]/g, '');
+  return /^(\+380\d{9}|0\d{9})$/.test(cleaned);
+}
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const nameEl = document.getElementById('cf-name');
+  const phoneEl = document.getElementById('cf-phone');
+  const messageEl = document.getElementById('cf-message');
+  const errName = document.getElementById('err-name');
+  const errPhone = document.getElementById('err-phone');
+  const statusEl = document.getElementById('cf-status');
+  const submitBtn = document.getElementById('cf-submit');
+
+  errName.textContent = '';
+  errPhone.textContent = '';
+  statusEl.textContent = '';
+  statusEl.className = 'form-status';
+
+  let valid = true;
+  if (!nameEl.value.trim()) {
+    errName.textContent = 'Please enter your name';
+    valid = false;
+  }
+  if (!isValidPhone(phoneEl.value.trim())) {
+    errPhone.textContent = 'Please enter a valid phone number, e.g. +380971234567';
+    valid = false;
+  }
+  if (!valid) return;
+
+  if (APPS_SCRIPT_URL.indexOf('INSERT') !== -1) {
+    statusEl.textContent = 'Form is not configured yet: add APPS_SCRIPT_URL in the site code (see apps-script.gs).';
+    statusEl.classList.add('error');
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  const formData = new URLSearchParams();
+  formData.append('name', nameEl.value.trim());
+  formData.append('phone', phoneEl.value.trim());
+  formData.append('message', messageEl.value.trim());
+  formData.append('source', 'Portfolio inquiry');
+
+  try {
+    const res = await fetch(APPS_SCRIPT_URL, { method: 'POST', body: formData });
+    const data = await res.json();
+    if (data.status === 'ok') {
+      statusEl.textContent = 'Thank you! Your message has been sent — I\'ll be in touch soon.';
+      statusEl.classList.add('success');
+      document.getElementById('contactForm').reset();
+      setTimeout(closeContactModal, 1800);
+    } else {
+      throw new Error(data.message || 'Apps Script error');
+    }
+  } catch (err) {
+    statusEl.textContent = 'Something went wrong. Please try again or message me directly on Telegram.';
+    statusEl.classList.add('error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send';
+  }
+});
+</script>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>

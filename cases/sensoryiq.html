@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: sensoryIQ — Portfolio</title>
+<meta name="description" content="Case study: a landing page for the sensoryIQ children's development center in Kyiv.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="nav-name">Iryna Kyrylova</div>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap case-hero">
+  <a class="case-back" href="../index.html#projects">← All projects</a>
+  <span class="eyebrow">Landing page · Children's development center</span>
+  <h1>sensoryIQ</h1>
+  <p style="color:var(--text-muted); max-width:600px; font-size:16px;">
+    Website for the sensoryIQ children's development center in Kyiv (Varshavskyi residential complex), focused on building parents' trust and driving class bookings.
+  </p>
+
+  <div class="case-cover">
+    <img src="../assets/screenshots/sensoryiq-hero.jpg" alt="Homepage of the sensoryIQ children's development center website">
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <span class="eyebrow">Challenge</span>
+      Communicate the center's values and its development programs (sensory integration, speech therapy, support for children with ASD and ADHD) and drive parents to book a class.
+    </div>
+    <div>
+      <span class="eyebrow">Tools</span>
+      HTML, CSS, GitHub, Netlify
+    </div>
+    <div>
+      <span class="eyebrow">Role</span>
+      Design and build
+    </div>
+  </div>
+
+  <div class="case-body">
+    <h2>Solution</h2>
+    <p>
+      A soft pastel palette and a warm background create a calm, friendly mood right away, while
+      sections on programs, class videos, and the center's space give parents a full picture before
+      they ever pick up the phone. A booking form and contact buttons (call, Instagram) appear as
+      standalone CTAs on every screen.
+    </p>
+    <h2>Result</h2>
+    <p>
+      A single-page landing site that presents the center, its programs, and parent testimonials,
+      and drives visitors toward booking a class.
+    </p>
+    <div class="btn-row" style="margin-top:24px;">
+      <a class="btn btn-primary" href="https://sensoryiq.netlify.app/" target="_blank" rel="noopener">View live site ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="contacts">
+    <a href="mailto:ai.life.email@gmail.com">ai.life.email@gmail.com</a>
+    <a href="https://t.me/KyrylovaIryna" target="_blank" rel="noopener">Telegram</a>
+  </div>
+  <div class="copy">© 2026 · Web Design Portfolio</div>
+</footer>
+
+<button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+(function() {
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+
+</body>
+</html>
